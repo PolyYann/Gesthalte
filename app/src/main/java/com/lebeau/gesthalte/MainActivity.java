@@ -49,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Gestion des locaux en developpement",
                         Toast.LENGTH_LONG).show();
                 break;
-            case R.id.horraires:
-                Toast.makeText(this, "Gestion des horraires en developpement",
+            case R.id.horaires:
+                Toast.makeText(this, "Gestion des horaires en developpement",
                         Toast.LENGTH_LONG).show();
                 break;
         }

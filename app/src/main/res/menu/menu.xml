@@ -24,6 +24,6 @@
         android:id="@+id/locaux"
         android:title="Gestion des locaux" />
     <item
-        android:id="@+id/horraires"
-        android:title="Gestion des horraires" />
+        android:id="@+id/horaires"
+        android:title="Gestion des horaires" />
 </menu>
