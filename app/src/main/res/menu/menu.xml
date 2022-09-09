@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/app_bar_search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Chercher"
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/registre"
+        android:title="Registre d'enfants" />
+    <item
+        android:id="@+id/modifier"
+        android:title="Modifer" />
+    <item
+        android:id="@+id/ajouter"
+        android:title="Ajouter un enfant" />
+    <item
+        android:id="@+id/presences"
+        android:title="Gestion des présences" />
+    <item
+        android:id="@+id/locaux"
+        android:title="Gestion des locaux" />
+    <item
+        android:id="@+id/horraires"
+        android:title="Gestion des horraires" />
+</menu>
