@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(monIntent);
                 break;
             case R.id.menuPresences:
-                monIntent = new Intent(MainActivity.this, PresencesActivity.class);
-                startActivity(monIntent);
+                Toast.makeText(this, "Gestion des présences en developpement",
+                        Toast.LENGTH_LONG).show();
                 break;
             case R.id.menuLocaux:
                 Toast.makeText(this, "Gestion des locaux en developpement",
