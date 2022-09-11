@@ -9,21 +9,21 @@
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
     <item
-        android:id="@+id/registre"
+        android:id="@+id/menuRegistre"
         android:title="Registre d'enfants" />
     <item
-        android:id="@+id/modifier"
-        android:title="Modifer" />
+        android:id="@+id/menuModifier"
+        android:title="Modifer un enfant" />
     <item
-        android:id="@+id/ajouter"
+        android:id="@+id/menuAjouter"
         android:title="Ajouter un enfant" />
     <item
-        android:id="@+id/presences"
+        android:id="@+id/menuPresences"
         android:title="Gestion des présences" />
     <item
-        android:id="@+id/locaux"
+        android:id="@+id/menuLocaux"
         android:title="Gestion des locaux" />
     <item
-        android:id="@+id/horaires"
+        android:id="@+id/menuHoraires"
         android:title="Gestion des horaires" />
 </menu>

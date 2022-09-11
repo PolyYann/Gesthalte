@@ -10,7 +10,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/txtLocaux"
+        android:id="@+id/lblModAdresse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -18,10 +18,10 @@
         android:text="Gestions des locaux"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtpresences2" />
+        app:layout_constraintTop_toBottomOf="@+id/lblModNom" />
 
     <TextView
-        android:id="@+id/txtpresences2"
+        android:id="@+id/lblModNom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -29,10 +29,10 @@
         android:text="Gestions des présences"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtRegistre" />
+        app:layout_constraintTop_toBottomOf="@+id/txtModifier" />
 
     <TextView
-        android:id="@+id/txtHoraires"
+        android:id="@+id/lblModDateNais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -42,7 +42,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtLocaux"
+        app:layout_constraintTop_toBottomOf="@+id/lblModAdresse"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
@@ -54,7 +54,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="312dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/txtHoraires"
+        app:layout_constraintEnd_toStartOf="@+id/lblModDateNais"
         app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgLocaux"
@@ -68,7 +68,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/txtpresences2"
+        app:layout_constraintEnd_toStartOf="@+id/lblModNom"
         app:layout_constraintHorizontal_bias="0.892"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgRegistre"
@@ -81,14 +81,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/txtLocaux"
+        app:layout_constraintEnd_toStartOf="@+id/lblModAdresse"
         app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgPresences"
         app:srcCompat="@android:drawable/ic_menu_mapmode" />
 
     <TextView
-        android:id="@+id/txtRegistre"
+        android:id="@+id/txtModifier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -105,7 +105,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toStartOf="@+id/txtRegistre"
+        app:layout_constraintEnd_toStartOf="@+id/txtModifier"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"

@@ -11,10 +11,12 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Intent monIntent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -29,27 +31,27 @@ public class MainActivity extends AppCompatActivity {
         switch (option) {
             case R.id.app_bar_search:
                 break;
-            case R.id.registre:
+            case R.id.menuRegistre:
                 monIntent = new Intent(MainActivity.this, RegistreActivity.class);
                 startActivity(monIntent);
                 break;
-            case R.id.modifier:
+            case R.id.menuModifier:
                 monIntent = new Intent(MainActivity.this, ModifierActivity.class);
                 startActivity(monIntent);
                 break;
-            case R.id.ajouter:
+            case R.id.menuAjouter:
                 monIntent = new Intent(MainActivity.this, AjouterActivity.class);
                 startActivity(monIntent);
                 break;
-            case R.id.presences:
+            case R.id.menuPresences:
                 monIntent = new Intent(MainActivity.this, PresencesActivity.class);
                 startActivity(monIntent);
                 break;
-            case R.id.locaux:
+            case R.id.menuLocaux:
                 Toast.makeText(this, "Gestion des locaux en developpement",
                         Toast.LENGTH_LONG).show();
                 break;
-            case R.id.horaires:
+            case R.id.menuHoraires:
                 Toast.makeText(this, "Gestion des horaires en developpement",
                         Toast.LENGTH_LONG).show();
                 break;
