@@ -20,6 +20,11 @@ public class AjouterActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter);
+        setWidgets();
+    }
+
+    private void setWidgets() {
+
     }
 
     @Override
@@ -28,6 +33,11 @@ public class AjouterActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    public void onEnregistrer(){
+        Toast.makeText(AjouterActivity.this, "Enregistrement est à développer",
+                Toast.LENGTH_LONG).show();
+
+    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
