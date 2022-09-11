@@ -9,331 +9,63 @@
     android:backgroundTintMode="src_in"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/lblModAdresse"
-        android:layout_width="61dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
-        android:text="Adresse"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModDateNais" />
-
-    <TextView
-        android:id="@+id/lblModVille"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="22dp"
-        android:text="Ville"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModAdresse" />
-
-    <TextView
-        android:id="@+id/lblModProvince"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="22dp"
-        android:text="Province"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModVille" />
-
-    <TextView
-        android:id="@+id/lblModCodePostal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
-        android:text="Code postal"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModProvince" />
-
-    <TextView
-        android:id="@+id/lblModAllergie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
-        android:text="Allergie"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModCodePostal" />
-
-    <TextView
-        android:id="@+id/lblModParent1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
-        android:text="Parent 1"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModAllergie" />
-
-    <TextView
-        android:id="@+id/lblModParent2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
-        android:text="Parent 2"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModParent1" />
-
-    <TextView
-        android:id="@+id/lblModPersAuto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="22dp"
-        android:text="Personnes autorisées"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModParent2" />
-
-    <TextView
-        android:id="@+id/lblModPrenom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
-        android:text="Prénom"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModNom" />
-
-    <TextView
-        android:id="@+id/lblModNom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="22dp"
-        android:text="Nom"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <TextView
-        android:id="@+id/lblModDateNais"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="22dp"
-        android:text="Date de naissance"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModPrenom" />
-
-    <TextView
-        android:id="@+id/txtModifier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="31dp"
-        android:layout_marginEnd="139dp"
-        android:text="Ajouter un enfant"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="47dp"
-        android:layout_height="47dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="16dp"
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
-    <Button
-        android:id="@+id/btnModEffacer"
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="40dp"
-        android:text="Effacer"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="135dp"
+        android:text="Registre des enfants"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRegAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="555dp"
+        android:layout_marginBottom="72dp"
+        android:text="Ajouter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblModPersAuto" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnModEnregistrer"
+        android:id="@+id/btnRegModifier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="71dp"
-        android:layout_marginTop="38dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginBottom="40dp"
-        android:text="Enregistrer"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="555dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="72dp"
+        android:text="Modifier"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnModEffacer"
-        app:layout_constraintTop_toBottomOf="@+id/txtModPersAuto" />
+        app:layout_constraintStart_toEndOf="@+id/btnRegAjout"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/txtModNom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
+    <ListView
+        android:layout_width="0dp"
+        android:layout_height="539dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModNom"
-        app:layout_constraintTop_toBottomOf="@+id/txtModifier" />
-
-    <EditText
-        android:id="@+id/txtModPrenom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModPrenom"
-        app:layout_constraintTop_toBottomOf="@+id/txtModNom" />
-
-    <EditText
-        android:id="@+id/txtModDateNais"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModDateNais"
-        app:layout_constraintTop_toBottomOf="@+id/txtModPrenom" />
-
-    <EditText
-        android:id="@+id/txtModAdresse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModAdresse"
-        app:layout_constraintTop_toBottomOf="@+id/txtModDateNais" />
-
-    <EditText
-        android:id="@+id/txtModVille"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModAdresse"
-        app:layout_constraintTop_toBottomOf="@+id/txtModAdresse" />
-
-    <EditText
-        android:id="@+id/txtModProvince"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="105dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModProvince"
-        app:layout_constraintTop_toBottomOf="@+id/txtModVille" />
-
-    <EditText
-        android:id="@+id/txtModCodePostal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModCodePostal"
-        app:layout_constraintTop_toBottomOf="@+id/txtModProvince" />
-
-    <EditText
-        android:id="@+id/txtModParent1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="27dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModParent1"
-        app:layout_constraintTop_toBottomOf="@+id/txtModAllergie" />
-
-    <EditText
-        android:id="@+id/txtModParent2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="27dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModParent2"
-        app:layout_constraintTop_toBottomOf="@+id/txtModParent1" />
-
-    <EditText
-        android:id="@+id/txtModPersAuto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/lblModPersAuto"
-        app:layout_constraintTop_toBottomOf="@+id/txtModParent2" />
-
-    <EditText
-        android:id="@+id/txtModAllergie"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="28dp"
-        android:ems="10"
-        android:gravity="start|top"
-        android:inputType="textMultiLine"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/lblModAllergie"
-        app:layout_constraintTop_toBottomOf="@+id/txtModCodePostal" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
