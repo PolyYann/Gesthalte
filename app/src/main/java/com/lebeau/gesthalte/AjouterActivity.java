@@ -1,29 +1,70 @@
 package com.lebeau.gesthalte;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class AjouterActivity extends AppCompatActivity {
 
     private Intent monIntent;
+    private SimpleAdapter simpleAdapter;
+
+    private ListView listViewAjouter;
+
+    private ArrayList<HashMap<String, String> > listeChampsAjouter = new ArrayList<>();
+
+    private String[] champsAjouter = {"Nom:", "Prénom:", "Date de naissance:", "Âge", "Téléphone:",
+            "Adresse:", "Ville:", "Province:", "Code postal:", "Allergie(s):", "Parent 1:",
+            "Parent 2:", "Parent 3:", "Personnes autorisées: "};
+
+    private String[] plainTexts ={"", "", "", "", "", "", "", "", "", "", "", "", "", ""};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter);
         setWidgets();
+        setListeners();
+    }
+
+    private void setListeners() {
+        listViewAjouter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(AjouterActivity.this, champsAjouter[i], Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void setWidgets() {
+        //écouter ce qui va se passer dans le id listingView
+        listViewAjouter = findViewById(R.id.listViewAjouter);
+        String[] from = {"label", "plainText"};
+        int[] to = {R.id.lblLigneItem, R.id.txtLigneItem} ;
+        //construire la liste
+        for(int i=0 ; i< champsAjouter.length; i++){
+            HashMap<String, String> map = new HashMap<>();
+            map.put("label", champsAjouter[i]);
+            map.put("plainText", plainTexts[i]);
+            listeChampsAjouter.add(map);
+
+        }
+        simpleAdapter = new SimpleAdapter(AjouterActivity.this, listeChampsAjouter,
+                R.layout.ligne_item_ajouter, from, to );
+        listViewAjouter.setAdapter(simpleAdapter);
+
 
     }
 
