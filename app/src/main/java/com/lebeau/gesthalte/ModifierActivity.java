@@ -72,7 +72,7 @@ public class ModifierActivity extends AppCompatActivity {
     }
 
     public void onEnregistrer(){
-        Toast.makeText(ModifierActivity.this, "Enregistrement est à développer",
+        Toast.makeText(ModifierActivity.this, R.string.saving_Construction,
                 Toast.LENGTH_LONG).show();
 
     }
@@ -84,27 +84,27 @@ public class ModifierActivity extends AppCompatActivity {
             case R.id.app_bar_search:
                 break;
             case R.id.menuRegistre:
-                monIntent = new Intent(ModifierActivity.this, RegistreActivity.class);
+                monIntent = new Intent(this, RegistreActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuModifier:
-                monIntent = new Intent(ModifierActivity.this, ModifierActivity.class);
+                monIntent = new Intent(this, ModifierActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuAjouter:
-                monIntent = new Intent(ModifierActivity.this, AjouterActivity.class);
+                monIntent = new Intent(this, AjouterActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuPresences:
-                monIntent = new Intent(ModifierActivity.this, PresencesActivity.class);
-                startActivity(monIntent);
-                break;
+                Toast.makeText(this, R.string.presenceManagement,
+                        Toast.LENGTH_LONG).show();
+                      break;
             case R.id.menuLocaux:
-                Toast.makeText(this, "Gestion des locaux en developpement",
+                Toast.makeText(this, R.string.roomManagement_Construction,
                         Toast.LENGTH_LONG).show();
                 break;
             case R.id.menuHoraires:
-                Toast.makeText(this, "Gestion des horaires en developpement",
+                Toast.makeText(this, R.string.schedulePlanning_Construction,
                         Toast.LENGTH_LONG).show();
                 break;
         }

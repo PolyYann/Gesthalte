@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Gest\'halte</string>
+    <string name="name">Name:</string>
+    <string name="firstName">First name:</string>
+    <string name="DateNaissance">Birth date:</string>
+    <string name="age">Age</string>
+    <string name="phone">Phone:</string>
+    <string name="address">Address:</string>
+    <string name="city">City:</string>
+    <string name="province">Province:</string>
+    <string name="zipCode">Postal Code:</string>
+    <string name="allergy">Allergy (ies):</string>
+    <string name="parent1">Parent 1:</string>
+    <string name="parent2">Parent 2:</string>
+    <string name="parent3">Parent 3:</string>
+    <string name="authorizedPersons">\"Authorized persons: \"</string>
+    <string name="roomManagement_Construction">Room Management - to develop</string>
+    <string name="schedulePlanning_Construction">Schedule Management - to develop</string>
+    <string name="presenceManagement_Construction">Presences management - to develop</string>
+    <string name="search">Search</string>
+    <string name="kidRegister">Kids register</string>
+    <string name="addKid">Add a kid</string>
+    <string name="modifyKid">Modify a kid</string>
+    <string name="saving_Construction">Save - to develop</string>
+    <string name="btnAdd">Add</string>
+    <string name="roomManagement">Room management</string>
+    <string name="presenceManagement">Presence management</string>
+    <string name="scheduleManagement">Schedule management</string>
+    <string name="btnModify">Modify</string>
+</resources>

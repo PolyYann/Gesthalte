@@ -25,9 +25,11 @@ public class AjouterActivity extends AppCompatActivity {
 
     private ArrayList<HashMap<String, String> > listeChampsAjouter = new ArrayList<>();
 
-    private String[] champsAjouter = {"Nom:", "Prénom:", "Date de naissance:", "Âge", "Téléphone:",
-            "Adresse:", "Ville:", "Province:", "Code postal:", "Allergie(s):", "Parent 1:",
-            "Parent 2:", "Parent 3:", "Personnes autorisées: "};
+    private String[] champsAjouter = {getString(R.string.name), getString(R.string.firstName),
+            getString(R.string.DateNaissance), getString(R.string.age), getString(R.string.phone),
+            getString(R.string.address), getString(R.string.city), getString(R.string.province),
+            getString(R.string.zipCode), getString(R.string.allergy), getString(R.string.parent1),
+            getString(R.string.parent2), getString(R.string.parent3), getString(R.string.authorizedPersons)};
 
     private String[] plainTexts ={"", "", "", "", "", "", "", "", "", "", "", "", "", ""};
 
@@ -75,7 +77,7 @@ public class AjouterActivity extends AppCompatActivity {
     }
 
     public void onEnregistrer(){
-        Toast.makeText(AjouterActivity.this, "Enregistrement est à développer",
+        Toast.makeText(AjouterActivity.this, R.string.saving_Construction,
                 Toast.LENGTH_LONG).show();
 
     }
@@ -87,27 +89,27 @@ public class AjouterActivity extends AppCompatActivity {
             case R.id.app_bar_search:
                 break;
             case R.id.menuRegistre:
-                monIntent = new Intent(AjouterActivity.this, RegistreActivity.class);
+                monIntent = new Intent(this, RegistreActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuModifier:
-                monIntent = new Intent(AjouterActivity.this, ModifierActivity.class);
+                monIntent = new Intent(this, ModifierActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuAjouter:
-                monIntent = new Intent(AjouterActivity.this, AjouterActivity.class);
+                monIntent = new Intent(this, AjouterActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuPresences:
-                monIntent = new Intent(AjouterActivity.this, PresencesActivity.class);
-                startActivity(monIntent);
+                Toast.makeText(this, R.string.presenceManagement,
+                        Toast.LENGTH_LONG).show();
                 break;
             case R.id.menuLocaux:
-                Toast.makeText(this, "Gestion des locaux en developpement",
+                Toast.makeText(this, R.string.roomManagement_Construction,
                         Toast.LENGTH_LONG).show();
                 break;
             case R.id.menuHoraires:
-                Toast.makeText(this, "Gestion des horaires en developpement",
+                Toast.makeText(this, R.string.schedulePlanning_Construction,
                         Toast.LENGTH_LONG).show();
                 break;
         }

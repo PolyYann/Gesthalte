@@ -5,25 +5,25 @@
     <item
         android:id="@+id/app_bar_search"
         android:icon="@android:drawable/ic_menu_search"
-        android:title="Chercher"
+        android:title="@string/search"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
     <item
         android:id="@+id/menuRegistre"
-        android:title="Registre d'enfants" />
+        android:title="@string/kidRegister" />
     <item
         android:id="@+id/menuModifier"
-        android:title="Modifer un enfant" />
+        android:title="@string/modifyKid" />
     <item
         android:id="@+id/menuAjouter"
-        android:title="Ajouter un enfant" />
+        android:title="@string/addKid" />
     <item
         android:id="@+id/menuPresences"
-        android:title="Gestion des présences" />
+        android:title="@string/presenceManagement" />
     <item
         android:id="@+id/menuLocaux"
-        android:title="Gestion des locaux" />
+        android:title="@string/roomManagement" />
     <item
         android:id="@+id/menuHoraires"
-        android:title="Gestion des horaires" />
+        android:title="@string/scheduleManagement" />
 </menu>

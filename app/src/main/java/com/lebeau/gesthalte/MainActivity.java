@@ -32,27 +32,27 @@ public class MainActivity extends AppCompatActivity {
             case R.id.app_bar_search:
                 break;
             case R.id.menuRegistre:
-                monIntent = new Intent(MainActivity.this, RegistreActivity.class);
+                monIntent = new Intent(this, RegistreActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuModifier:
-                monIntent = new Intent(MainActivity.this, ModifierActivity.class);
+                monIntent = new Intent(this, ModifierActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuAjouter:
-                monIntent = new Intent(MainActivity.this, AjouterActivity.class);
+                monIntent = new Intent(this, AjouterActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuPresences:
-                Toast.makeText(this, "Gestion des présences en developpement",
+                Toast.makeText(this, R.string.presenceManagement_Construction,
                         Toast.LENGTH_LONG).show();
                 break;
             case R.id.menuLocaux:
-                Toast.makeText(this, "Gestion des locaux en developpement",
+                Toast.makeText(this, R.string.roomManagement_Construction,
                         Toast.LENGTH_LONG).show();
                 break;
             case R.id.menuHoraires:
-                Toast.makeText(this, "Gestion des horaires en developpement",
+                Toast.makeText(this, R.string.schedulePlanning_Construction,
                         Toast.LENGTH_LONG).show();
                 break;
         }
