@@ -31,12 +31,12 @@ public class EnfantDBHelper extends SQLiteOpenHelper {
     public static final String COL_EST_PRESENT = "est_present";
 
     //ddl table
-    public static final String DDL_ENFANT ="CREATE TABLE "+TABLE_E+" " +
-            "("+COL_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+COL_NOM+" TEXT, "+COL_PRENOM+" TEXT, "
-            +COL_DATE_NAISSANCE+" TEXT, "+COL_AGE+" INTEGER, "+COL_TELEPHONE+" TEXT, "+COL_ADRESSE+
-            " TEXT, "+COL_VILLE+" TEXT, "+COL_PROVINCE+" TEXT, "+COL_CODE_POSTAL+" TEXT, " +
-            ""+COL_ALLERGIES+" TEXT, "+COL_PARENT1+" TEXT, "+COL_PARENT2+" TEXT, "+COL_PARENT3+
-            " TEXT, "+COL_PERS_AUTORISEES+" TEXT, "+COL_EST_PRESENT+" INTEGER);";
+    public static final String DDL_ENFANT = "CREATE TABLE " + TABLE_E + " " +
+            "(" + COL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + COL_NOM + " TEXT, " + COL_PRENOM + " TEXT, "
+            + COL_DATE_NAISSANCE + " TEXT, " + COL_AGE + " INTEGER, " + COL_TELEPHONE + " TEXT, " + COL_ADRESSE +
+            " TEXT, " + COL_VILLE + " TEXT, " + COL_PROVINCE + " TEXT, " + COL_CODE_POSTAL + " TEXT, " +
+            "" + COL_ALLERGIES + " TEXT, " + COL_PARENT1 + " TEXT, " + COL_PARENT2 + " TEXT, " + COL_PARENT3 +
+            " TEXT, " + COL_PERS_AUTORISEES + " TEXT, " + COL_EST_PRESENT + " INTEGER);";
 
     public EnfantDBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

@@ -19,7 +19,7 @@ public class RegistreEnfants {
     public void ajouterEnfant(Enfant enfant) {
         listEnfants.add(enfant);
     }
-    public void modifierEnfant(Enfant enfant) {
+    public Enfant modifierEnfant(Enfant enfant) {
         for (Enfant e : listEnfants) {
             if (e.get_id() == enfant.get_id()) {
                 e.setNom(enfant.getNom());
@@ -37,7 +37,9 @@ public class RegistreEnfants {
                 e.setParent3(enfant.getParent3());
                 e.setPersAutorisees(enfant.getPersAutorisees());
                 e.setPresent(enfant.isPresent());
+                return e;
             }
         }
+        return null;
     }
 }

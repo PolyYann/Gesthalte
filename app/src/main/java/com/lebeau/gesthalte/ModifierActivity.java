@@ -22,9 +22,7 @@ public class ModifierActivity extends AppCompatActivity {
     private ListView listViewModifier;
     private ArrayList<HashMap<String, String>> listeChampsModifier = new ArrayList<>();
 
-    private String[] champsModifier = {"Nom:", "Prénom:", "Date de naissance:", "Âge", "Téléphone:",
-            "Adresse:", "Ville:", "Province:", "Code postal:", "Allergie(s):", "Parent 1:",
-            "Parent 2:", "Parent 3:", "Personnes autorisées: "};
+    private String[] label;
 
     private String[] plainTexts ={"", "", "", "", "", "", "", "", "", "", "", "", "", ""};
 
@@ -32,6 +30,12 @@ public class ModifierActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifier);
+        label = new String[]{getString(R.string.name), getString(R.string.firstName),
+                getString(R.string.DateNaissance), getString(R.string.age), getString(R.string.phone),
+                getString(R.string.address), getString(R.string.city), getString(R.string.province),
+                getString(R.string.zipCode), getString(R.string.allergy), getString(R.string.parent1),
+                getString(R.string.parent2), getString(R.string.parent3), getString(R.string.authorizedPersons)};
+
         setWidgets();
         setListeners();
     }
@@ -40,7 +44,7 @@ public class ModifierActivity extends AppCompatActivity {
         listViewModifier.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(ModifierActivity.this, champsModifier[i], Toast.LENGTH_LONG).show();
+                Toast.makeText(ModifierActivity.this, label[i], Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -51,9 +55,9 @@ public class ModifierActivity extends AppCompatActivity {
         String[] from = {"label", "plainText"};
         int[] to = {R.id.lblLigneItem, R.id.txtLigneItem} ;
         //construire la liste
-        for(int i=0 ; i< champsModifier.length; i++){
+        for(int i=0 ; i< label.length; i++){
             HashMap<String, String> map = new HashMap<>();
-            map.put("label", champsModifier[i]);
+            map.put("label", label[i]);
             map.put("plainText", plainTexts[i]);
             listeChampsModifier.add(map);
 

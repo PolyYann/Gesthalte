@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -16,49 +17,50 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import model.DBAdapter;
+import model.Enfant;
+
 public class AjouterActivity extends AppCompatActivity {
 
     private Intent monIntent;
     private SimpleAdapter simpleAdapter;
-
+    private DBAdapter dbAdapter;
     private ListView listViewAjouter;
+    private Button btnAjouter;
+    private ArrayList<HashMap<String, String> >listeChampsAjouter = new ArrayList<>(); ;
 
-    private ArrayList<HashMap<String, String> > listeChampsAjouter = new ArrayList<>();
-
-    private String[] champsAjouter = {getString(R.string.name), getString(R.string.firstName),
-            getString(R.string.DateNaissance), getString(R.string.age), getString(R.string.phone),
-            getString(R.string.address), getString(R.string.city), getString(R.string.province),
-            getString(R.string.zipCode), getString(R.string.allergy), getString(R.string.parent1),
-            getString(R.string.parent2), getString(R.string.parent3), getString(R.string.authorizedPersons)};
-
-    private String[] plainTexts ={"", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+    private String[] label;
+    private String[] plainTexts ={"Cailloux", "Agathe", "2020-02-20", "19", "(123)456-7890", "12 carrieres", "St-Granite",  "Quebec","J1P 2P2", "roche", "Fred Cailloux", "Délima Cailloux", "aucun", "Arthur LaRoche"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajouter);
+
+        label = new String[]{getString(R.string.name), getString(R.string.firstName),
+                getString(R.string.DateNaissance), getString(R.string.age), getString(R.string.phone),
+                getString(R.string.address), getString(R.string.city), getString(R.string.province),
+                getString(R.string.zipCode), getString(R.string.allergy), getString(R.string.parent1),
+                getString(R.string.parent2), getString(R.string.parent3), getString(R.string.authorizedPersons)};
+        dbAdapter = new DBAdapter(this);
         setWidgets();
         setListeners();
     }
 
     private void setListeners() {
-        listViewAjouter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(AjouterActivity.this, champsAjouter[i], Toast.LENGTH_LONG).show();
-            }
-        });
+
     }
 
     private void setWidgets() {
         //écouter ce qui va se passer dans le id listingView
+        btnAjouter = findViewById(R.id.btnAjouter);
         listViewAjouter = findViewById(R.id.listViewAjouter);
         String[] from = {"label", "plainText"};
         int[] to = {R.id.lblLigneItem, R.id.txtLigneItem} ;
         //construire la liste
-        for(int i=0 ; i< champsAjouter.length; i++){
+        for(int i = 0; i< label.length; i++){
             HashMap<String, String> map = new HashMap<>();
-            map.put("label", champsAjouter[i]);
+            map.put("label", label[i]);
             map.put("plainText", plainTexts[i]);
             listeChampsAjouter.add(map);
 
@@ -114,5 +116,28 @@ public class AjouterActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onAjouter(View view) {
+        //creer enfant
+        Enfant enfant = new Enfant();
+        enfant.setNom(plainTexts[0]);
+        enfant.setPrenom(plainTexts[1]);
+        enfant.setDateNaissance(plainTexts[2]);
+        enfant.setAge(Integer.parseInt(plainTexts[3]));
+        enfant.setTelephone(plainTexts[4]);
+        enfant.setAdresse(plainTexts[5]);
+        enfant.setVille(plainTexts[6]);
+        enfant.setProvince(plainTexts[7]);
+        enfant.setCodePostal(plainTexts[8]);
+        enfant.setAllergies(plainTexts[9]);
+        enfant.setParent1(plainTexts[10]);
+        enfant.setParent2(plainTexts[11]);
+        enfant.setParent3(plainTexts[12]);
+        enfant.setPersAutorisees(plainTexts[13]);
+        enfant.setPresent(false);
+        //ajouter enfant dans la bd
+        dbAdapter.ajouterEnfant(enfant);
+        Toast.makeText(AjouterActivity.this, "ajouter", Toast.LENGTH_LONG).show();
     }
 }
