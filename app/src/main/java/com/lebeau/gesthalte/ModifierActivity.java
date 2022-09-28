@@ -16,15 +16,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import model.Enfant;
+import model.RegistreEnfants;
+
 public class ModifierActivity extends AppCompatActivity {
     private Intent monIntent;
     private SimpleAdapter simpleAdapter;
     private ListView listViewModifier;
     private ArrayList<HashMap<String, String>> listeChampsModifier = new ArrayList<>();
-
+    private Enfant enfant;
     private String[] label;
 
-    private String[] plainTexts ={"", "", "", "", "", "", "", "", "", "", "", "", "", ""};
+    private String[] plainTexts ;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,7 @@ public class ModifierActivity extends AppCompatActivity {
                 getString(R.string.address), getString(R.string.city), getString(R.string.province),
                 getString(R.string.zipCode), getString(R.string.allergy), getString(R.string.parent1),
                 getString(R.string.parent2), getString(R.string.parent3), getString(R.string.authorizedPersons)};
-
+        RegistreEnfants.getInstance();
         setWidgets();
         setListeners();
     }
@@ -50,6 +53,12 @@ public class ModifierActivity extends AppCompatActivity {
     }
 
     private void setWidgets() {
+        monIntent = getIntent();
+        enfant = (Enfant) monIntent.getSerializableExtra("enfant");
+        plainTexts = new String[]{enfant.getNom(), enfant.getPrenom(), enfant.getDateNaissance(),
+                String.valueOf(enfant.getAge()), enfant.getTelephone(), enfant.getAdresse(),
+                enfant.getVille(), enfant.getProvince(), enfant.getCodePostal(), enfant.getAllergies(),
+                enfant.getParent1(), enfant.getParent2(), enfant.getParent3(), enfant.getPersAutorisees()};
         //écouter ce qui va se passer dans le id listingView
         listViewModifier = findViewById(R.id.listViewModifier);
         String[] from = {"label", "plainText"};
@@ -76,6 +85,24 @@ public class ModifierActivity extends AppCompatActivity {
     }
 
     public void onEnregistrer(){
+        enfant.setNom(plainTexts[0]);
+        enfant.setPrenom(plainTexts[1]);
+        enfant.setDateNaissance(plainTexts[2]);
+        enfant.setAge(Integer.parseInt(plainTexts[3]));
+        enfant.setTelephone(plainTexts[4]);
+        enfant.setAdresse(plainTexts[5]);
+        enfant.setVille(plainTexts[6]);
+        enfant.setProvince(plainTexts[7]);
+        enfant.setCodePostal(plainTexts[8]);
+        enfant.setAllergies(plainTexts[9]);
+        enfant.setParent1(plainTexts[10]);
+        enfant.setParent2(plainTexts[11]);
+        enfant.setParent3(plainTexts[12]);
+        enfant.setPersAutorisees(plainTexts[13]);
+
+
+
+
         Toast.makeText(ModifierActivity.this, R.string.saving_Construction,
                 Toast.LENGTH_LONG).show();
 
@@ -114,4 +141,6 @@ public class ModifierActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

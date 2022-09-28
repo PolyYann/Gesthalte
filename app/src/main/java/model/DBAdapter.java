@@ -50,6 +50,35 @@ public class DBAdapter {
         Toast.makeText(context, "Enfant ajouté", Toast.LENGTH_LONG).show();
         closeBD();
     }
+    public void updaterBd(Enfant enfant){
+        openBD();
+
+        ContentValues values = new ContentValues();
+
+
+        values.put(COL_NOM, enfant.getNom());
+        values.put(COL_PRENOM, enfant.getPrenom());
+        values.put(COL_DATE_NAISSANCE, enfant.getDateNaissance());
+        values.put(COL_AGE, enfant.getAge());
+        values.put(COL_TELEPHONE, enfant.getTelephone());
+        values.put(COL_ADRESSE, enfant.getAdresse());
+        values.put(COL_VILLE, enfant.getVille());
+        values.put(COL_PROVINCE, enfant.getProvince());
+        values.put(COL_CODE_POSTAL, enfant.getCodePostal());
+        values.put(COL_ALLERGIES, enfant.getAllergies());
+        values.put(COL_PARENT1, enfant.getParent1());
+        values.put(COL_PARENT2, enfant.getParent2());
+        values.put(COL_PARENT3, enfant.getParent3());
+        values.put(COL_PERS_AUTORISEES, enfant.getPersAutorisees());
+        values.put(COL_EST_PRESENT, enfant.isPresent());
+
+        db.update(TABLE_E, values, COL_ID + "='" + enfant.get_id() + "'", null);
+
+        db.close();
+
+
+
+    }
 
     public void afficherEnfants(){
         openBD();

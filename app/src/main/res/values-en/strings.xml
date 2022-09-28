@@ -26,5 +26,5 @@
     <string name="roomManagement">Room management</string>
     <string name="presenceManagement">Presence management</string>
     <string name="scheduleManagement">Schedule management</string>
-    <string name="btnModify">Modify</string>
+    <string name="btnEnregistrer">Save</string>
 </resources>

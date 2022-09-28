@@ -26,5 +26,5 @@
     <string name="roomManagement">Gestion des locaux</string>
     <string name="presenceManagement">Gestions des présences</string>
     <string name="scheduleManagement">Gestions des horaires</string>
-    <string name="btnModify">Modifier</string>
+    <string name="btnEnregistrer">Enregistrer</string>
 </resources>
