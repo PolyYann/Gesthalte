@@ -8,13 +8,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.Toast;
 
-public class DBA {
+public class DBAdapter {
     private SQLiteDatabase db;
     private EnfantDBHelper helper;
     private Context context;
     private static RegistreEnfants registreEnfants;
 
-    public DBA(Context context) {
+    public DBAdapter(Context context) {
         this.context = context;
         this.helper = new EnfantDBHelper(context, EnfantDBHelper.BD_NAME, null, EnfantDBHelper.VERSION);
     }
