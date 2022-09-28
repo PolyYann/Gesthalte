@@ -13,7 +13,7 @@
     <string name="parent1">Parent 1:</string>
     <string name="parent2">Parent 2:</string>
     <string name="parent3">Parent 3:</string>
-    <string name="authorizedPersons">\"Personnes autorisées: \"</string>
+    <string name="authorizedPersons">Personnes autorisées:</string>
     <string name="roomManagement_Construction">Gestion des locaux - à venir</string>
     <string name="schedulePlanning_Construction">Gestion des horaires - à venir</string>
     <string name="presenceManagement_Construction">Gestion des présences - à venir</string>
