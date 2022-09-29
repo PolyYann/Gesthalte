@@ -27,4 +27,5 @@
     <string name="presenceManagement">Presence management</string>
     <string name="scheduleManagement">Schedule management</string>
     <string name="btnEnregistrer">Save</string>
+    <string name="presence">Present</string>
 </resources>

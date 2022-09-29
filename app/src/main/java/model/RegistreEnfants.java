@@ -25,4 +25,8 @@ public class RegistreEnfants {
     public Enfant afficherEnfant(int id) {
         return listEnfants.get(id);
     }
+    public List<Enfant> getEnfants() {
+        return listEnfants;
+    }
+
 }

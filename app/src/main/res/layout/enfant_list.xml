@@ -8,9 +8,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="-152dp"
+        tools:layout_editor_absoluteY="201dp">
 
         <LinearLayout
+            android:id="@+id/linear"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="25"
@@ -24,11 +27,14 @@
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/imgPresence"
+        <CheckBox
+            android:id="@+id/chkPresent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="10"
-            app:srcCompat="@android:drawable/btn_default_small" />
+            android:layout_weight="25"
+            android:checked="false"
+            android:onClick="onCheckboxClick"
+            android:text="@string/presence" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

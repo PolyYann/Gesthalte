@@ -79,6 +79,13 @@ public class DBAdapter {
 
 
     }
+    public void modifierPresence(boolean present, int id){
+        openBD();
+        ContentValues values = new ContentValues();
+        values.put(COL_EST_PRESENT, present);
+        db.update(TABLE_E, values, COL_ID + "='" + id + "'", null);
+        closeBD();
+    }
 
     public void afficherEnfants(){
         openBD();

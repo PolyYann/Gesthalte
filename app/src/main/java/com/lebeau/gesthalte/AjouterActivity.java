@@ -48,7 +48,12 @@ public class AjouterActivity extends AppCompatActivity {
     }
 
     private void setListeners() {
-
+        listViewAjouter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(AjouterActivity.this, label[i], Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void setWidgets() {
