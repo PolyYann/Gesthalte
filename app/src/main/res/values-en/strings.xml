@@ -31,5 +31,6 @@
     <string name="modifier">Modify</string>
     <string name="add">Add</string>
     <string name="childRegister">Child register</string>
+    <string name="backHome">Back home</string>
     <string name="nom_de_l_enfant">Child\'s name</string>
 </resources>

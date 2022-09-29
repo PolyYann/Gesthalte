@@ -95,6 +95,10 @@ public class AjouterActivity extends AppCompatActivity {
         switch (option) {
             case R.id.app_bar_search:
                 break;
+            case R.id.menuAccueil:
+                monIntent = new Intent(this, MainActivity.class);
+                startActivity(monIntent);
+                break;
             case R.id.menuRegistre:
                 monIntent = new Intent(this, RegistreActivity.class);
                 startActivity(monIntent);

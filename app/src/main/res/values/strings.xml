@@ -28,9 +28,9 @@
     <string name="scheduleManagement">Gestions des horaires</string>
     <string name="btnEnregistrer">Enregistrer</string>
     <string name="presence">Present</string>
-
     <string name="modifier">Modifier</string>
     <string name="add">Ajouter</string>
     <string name="childRegister">Registre des enfants</string>
+    <string name="backHome">Retour à l\'accueil</string>
     <string name="nom_de_l_enfant">Nom de l\'enfant</string>
 </resources>
