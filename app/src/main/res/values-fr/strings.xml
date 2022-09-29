@@ -31,4 +31,5 @@
     <string name="modifier">Modifier</string>
     <string name="add">Ajouter</string>
     <string name="childRegister">Registre des enfants</string>
+    <string name="nom_de_l_enfant">Nom de l\'enfant</string>
 </resources>

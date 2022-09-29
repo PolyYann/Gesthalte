@@ -85,6 +85,7 @@ public class DBAdapter {
         ContentValues values = new ContentValues();
         values.put(COL_EST_PRESENT, present);
         db.update(TABLE_E, values, COL_ID + "='" + id + "'", null);
+        Toast.makeText(context, "Presence modifiée", Toast.LENGTH_LONG).show();
         closeBD();
     }
 

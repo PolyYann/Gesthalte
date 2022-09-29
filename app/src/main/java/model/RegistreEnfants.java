@@ -9,8 +9,8 @@ public class RegistreEnfants {
     private static final RegistreEnfants instance = new RegistreEnfants();
 
     private static final ArrayList<Enfant> listEnfants = new ArrayList<>();
-    private static final ArrayList<Enfant> mockEnfants = new ArrayList<>(List.of(new Enfant("Dupont", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false),new Enfant("Dupont", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false)
-            ,new Enfant("Dupont1", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false),
+    private static final ArrayList<Enfant> mockEnfants = new ArrayList<>(List.of(new Enfant("Dupont", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false),
+            new Enfant("Dupont1", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false),
             new Enfant("Dupont2", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false),
             new Enfant("Dupont3", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false),
             new Enfant("Dupont4", "Jean", "datenaissance",24,"telephone","addresse","ville","province","codePost","allergies", "parent1","parent2","parent3","persAuth",false),
@@ -31,10 +31,10 @@ public class RegistreEnfants {
     public void supprimerEnfant(Enfant enfant) {
         listEnfants.remove(enfant);
     }
-    public Enfant afficherEnfant(int id) {
+    public Enfant getEnfant(int id) {
         return listEnfants.get(id);
     }
-    public List<Enfant> getEnfants(Context context) {
+    public List<Enfant> getEnfants() {
         return listEnfants;
     }
 
