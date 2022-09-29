@@ -95,10 +95,6 @@ public class AjouterActivity extends AppCompatActivity {
         switch (option) {
             case R.id.app_bar_search:
                 break;
-            case R.id.menuAccueil:
-                monIntent = new Intent(this, MainActivity.class);
-                startActivity(monIntent);
-                break;
             case R.id.menuRegistre:
                 monIntent = new Intent(this, RegistreActivity.class);
                 startActivity(monIntent);
@@ -118,6 +114,10 @@ public class AjouterActivity extends AppCompatActivity {
             case R.id.menuHoraires:
                 Toast.makeText(this, R.string.schedulePlanning_Construction,
                         Toast.LENGTH_LONG).show();
+                break;
+            case R.id.menuAccueil:
+                monIntent = new Intent(this, MainActivity.class);
+                startActivity(monIntent);
                 break;
         }
         return super.onOptionsItemSelected(item);
