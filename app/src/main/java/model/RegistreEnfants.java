@@ -1,5 +1,7 @@
 package model;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +27,9 @@ public class RegistreEnfants {
     public Enfant afficherEnfant(int id) {
         return listEnfants.get(id);
     }
-    public List<Enfant> getEnfants() {
+    public List<Enfant> getEnfants(Context context) {
+        DBAdapter dbAdapter = new DBAdapter(context);
+         dbAdapter.afficherEnfants();
         return listEnfants;
     }
 

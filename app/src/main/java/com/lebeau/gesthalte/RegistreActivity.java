@@ -10,28 +10,31 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
-import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import model.CheckedEnfant;
+import model.CustomListAdapter;
 import model.DBAdapter;
 import model.Enfant;
 import model.RegistreEnfants;
 
 public class RegistreActivity extends AppCompatActivity {
  private Intent monIntent;
- private SimpleAdapter simpleAdapter;
+ private CustomListAdapter customListAdapter;
  private AdapterView listViewRegistre;
  private CheckBox chkPresent;
+ private TextView lblEnfantNom;
     private DBAdapter dbAdapter;
-    private ArrayList<HashMap<String, String>> listeChampsRegistre = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registre);
-        setListener();
+//        setListener();
         setWigets();
     }
 
@@ -47,16 +50,20 @@ public class RegistreActivity extends AppCompatActivity {
         monIntent = getIntent();
         listViewRegistre = findViewById(R.id.listViewRegistre);
         chkPresent = findViewById(R.id.chkPresent);
-        for(Enfant e : RegistreEnfants.getInstance().getEnfants()){
+        lblEnfantNom = findViewById(R.id.lblEnfantNom);
+        String[] from = {"nomComplet", "present"};
+        ArrayList<CheckedEnfant> listEnfants = new ArrayList<>();
+        int[] to = {R.id.lblEnfantNom, R.id.chkPresent};
+
+
+        //liste des enfants avec ou sans checked
+        for(Enfant e : RegistreEnfants.getInstance().getEnfants(this)){
             String nomComplet = e.getPrenom() + " " + e.getNom();
-            if(e.isPresent()) {
-               chkPresent = findViewById(R.id.chkPresent);
-               chkPresent.isChecked();
-            }
-
+            CheckedEnfant chkEnfant = new CheckedEnfant(nomComplet, e.isPresent());
+           listEnfants.add(chkEnfant);
         }
-
-        listViewRegistre.setAdapter(simpleAdapter);
+        customListAdapter = new CustomListAdapter(this, listEnfants);
+          listViewRegistre.setAdapter(customListAdapter);
     }
 
     @Override
@@ -96,6 +103,7 @@ public class RegistreActivity extends AppCompatActivity {
 
     public void onCheckboxClick(View view) {
         boolean checked = ((CheckBox) view).isChecked();
+
         switch (view.getId()) {
 
             case R.id.chkPresent:
