@@ -26,13 +26,14 @@ import model.Enfant;
 import model.RegistreEnfants;
 
 public class RegistreActivity extends AppCompatActivity {
- private Intent monIntent;
- private ListView listViewRegistre;
- private CustomListAdapter adapter;
- private List<Integer> idEnfants=new ArrayList<>();;
- private List<String> nomComplets = new ArrayList<>();
-private DBAdapter dbAdapter;
- private RegistreEnfants registreEnfants;
+    private Intent monIntent;
+    private ListView listViewRegistre;
+    private CustomListAdapter adapter;
+    private List<Integer> idEnfants = new ArrayList<>();
+    ;
+    private List<String> nomComplets = new ArrayList<>();
+    private DBAdapter dbAdapter;
+    private RegistreEnfants registreEnfants;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +45,11 @@ private DBAdapter dbAdapter;
         listViewRegistre = findViewById(R.id.listViewRegistre);
         listViewRegistre.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         listViewRegistre.setMultiChoiceModeListener(modeListener);
-        adapter = new CustomListAdapter(nomComplets,idEnfants, this);
+        adapter = new CustomListAdapter(nomComplets, idEnfants, this);
         listViewRegistre.setAdapter(adapter);
 
     }
+
     AbsListView.MultiChoiceModeListener modeListener = new AbsListView.MultiChoiceModeListener() {
         @Override
         public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
@@ -75,18 +77,19 @@ private DBAdapter dbAdapter;
 
         }
     };
+
     private void getIdEnfants() {
         for (Enfant enfant : registreEnfants.getEnfants()) {
             idEnfants.add(enfant.get_id());
         }
     }
-    private void getNomComplets(){
+
+    private void getNomComplets() {
         for (Enfant enfant : registreEnfants.getEnfants()) {
 
-            nomComplets.add(enfant.getPrenom()+" "+enfant.getNom());
+            nomComplets.add(enfant.getPrenom() + " " + enfant.getNom());
         }
     }
-
 
 
     @Override
