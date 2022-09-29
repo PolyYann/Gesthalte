@@ -74,10 +74,6 @@ public class RegistreActivity extends AppCompatActivity {
                 monIntent = new Intent(this, RegistreActivity.class);
                 startActivity(monIntent);
                 break;
-            case R.id.menuModifier:
-                monIntent = new Intent(this, ModifierActivity.class);
-                startActivity(monIntent);
-                break;
             case R.id.menuAjouter:
                 monIntent = new Intent(this, AjouterActivity.class);
                 startActivity(monIntent);

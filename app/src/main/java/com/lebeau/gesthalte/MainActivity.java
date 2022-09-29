@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+ 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int option = item.getItemId();
@@ -33,10 +36,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.menuRegistre:
                 monIntent = new Intent(this, RegistreActivity.class);
-                startActivity(monIntent);
-                break;
-            case R.id.menuModifier:
-                monIntent = new Intent(this, ModifierActivity.class);
                 startActivity(monIntent);
                 break;
             case R.id.menuAjouter:

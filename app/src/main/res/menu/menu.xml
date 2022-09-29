@@ -12,9 +12,6 @@
         android:id="@+id/menuRegistre"
         android:title="@string/kidRegister" />
     <item
-        android:id="@+id/menuModifier"
-        android:title="@string/modifyKid" />
-    <item
         android:id="@+id/menuAjouter"
         android:title="@string/addKid" />
     <item

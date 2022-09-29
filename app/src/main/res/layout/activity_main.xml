@@ -18,6 +18,7 @@
         android:layout_marginEnd="130dp"
         android:text="@string/roomManagement_Construction"
         android:textSize="18sp"
+        android:clikable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgLocaux"
         app:layout_constraintTop_toBottomOf="@+id/lblModNom" />
@@ -31,6 +32,7 @@
         android:layout_marginEnd="102dp"
         android:text="@string/presenceManagement_Construction"
         android:textSize="18sp"
+        android:clikable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgPresences"
         app:layout_constraintTop_toBottomOf="@+id/txtModifier" />
@@ -45,6 +47,7 @@
         android:layout_marginBottom="200dp"
         android:text="@string/schedulePlanning_Construction"
         android:textSize="18sp"
+        android:clikable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgHoraires"
@@ -90,6 +93,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="179dp"
         android:text="@string/kidRegister"
+        android:clikable="true"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imgRegistre"
