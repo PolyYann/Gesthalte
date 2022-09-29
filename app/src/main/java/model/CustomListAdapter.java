@@ -26,12 +26,14 @@ import java.util.List;
 
 public class CustomListAdapter extends ArrayAdapter<String> {
     private List<String> nomComplets;
+    private List<Integer> idEnfants;
     private Context context;
     DBAdapter dbAdapter;
-    public CustomListAdapter(List<String> nomComplet, @NonNull Context context) {
+    public CustomListAdapter(List<String> nomComplet,List<Integer> idEnfants, @NonNull Context context) {
         super(context, R.layout.enfant_list, nomComplet);
         this.context = context;
         this.nomComplets = nomComplet;
+        this.idEnfants = idEnfants;
         dbAdapter = new DBAdapter(context);
     }
 
@@ -46,11 +48,12 @@ public class CustomListAdapter extends ArrayAdapter<String> {
         checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Enfant enfant = RegistreEnfants.getInstance().getEnfant(idEnfants.get(position));
                 if (checkBox.isChecked()) {
-                    dbAdapter.modifierPresence(true, RegistreEnfants.getInstance().getEnfant(position).get_id());
-                } else {
-                    dbAdapter.modifierPresence(false, RegistreEnfants.getInstance().getEnfant(position).get_id());
+                    enfant.setPresent(true);
+                    dbAdapter.updaterBd(enfant);
                 }
+
             }
         });
         return row;

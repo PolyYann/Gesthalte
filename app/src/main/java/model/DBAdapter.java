@@ -71,15 +71,24 @@ public class DBAdapter {
         values.put(COL_PARENT2, enfant.getParent2());
         values.put(COL_PARENT3, enfant.getParent3());
         values.put(COL_PERS_AUTORISEES, enfant.getPersAutorisees());
-        values.put(COL_EST_PRESENT, enfant.isPresent());
+        if(enfant.isPresent()){
+            values.put(COL_EST_PRESENT, 1);
+        }else{
+            values.put(COL_EST_PRESENT, 0);
+        }
 
         db.update(TABLE_E, values, COL_ID + "='" + enfant.get_id() + "'", null);
-
+        Toast.makeText(context, "Modifié", Toast.LENGTH_LONG).show();
         db.close();
 
 
 
     }
+
+
+
+
+
     public void modifierPresence(boolean present, int id){
         openBD();
         ContentValues values = new ContentValues();

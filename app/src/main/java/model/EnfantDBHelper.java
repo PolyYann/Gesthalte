@@ -38,6 +38,8 @@ public class EnfantDBHelper extends SQLiteOpenHelper {
             "" + COL_ALLERGIES + " TEXT, " + COL_PARENT1 + " TEXT, " + COL_PARENT2 + " TEXT, " + COL_PARENT3 +
             " TEXT, " + COL_PERS_AUTORISEES + " TEXT, " + COL_EST_PRESENT + " INTEGER);";
 
+    ;
+
     public EnfantDBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
@@ -49,6 +51,5 @@ public class EnfantDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
     }
 }

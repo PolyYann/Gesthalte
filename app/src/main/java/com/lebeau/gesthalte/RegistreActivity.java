@@ -29,10 +29,10 @@ public class RegistreActivity extends AppCompatActivity {
  private Intent monIntent;
  private ListView listViewRegistre;
  private CustomListAdapter adapter;
+ private List<Integer> idEnfants=new ArrayList<>();;
  private List<String> nomComplets = new ArrayList<>();
 private DBAdapter dbAdapter;
  private RegistreEnfants registreEnfants;
-private static boolean isActionMode = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +40,11 @@ private static boolean isActionMode = false;
         setContentView(R.layout.activity_registre);
         registreEnfants = RegistreEnfants.getInstance();
         getNomComplets();
+        getIdEnfants();
         listViewRegistre = findViewById(R.id.listViewRegistre);
         listViewRegistre.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
         listViewRegistre.setMultiChoiceModeListener(modeListener);
-        adapter = new CustomListAdapter(nomComplets, this);
+        adapter = new CustomListAdapter(nomComplets,idEnfants, this);
         listViewRegistre.setAdapter(adapter);
 
     }
@@ -74,7 +75,11 @@ private static boolean isActionMode = false;
 
         }
     };
-
+    private void getIdEnfants() {
+        for (Enfant enfant : registreEnfants.getEnfants()) {
+            idEnfants.add(enfant.get_id());
+        }
+    }
     private void getNomComplets(){
         for (Enfant enfant : registreEnfants.getEnfants()) {
 
@@ -82,24 +87,7 @@ private static boolean isActionMode = false;
         }
     }
 
-//    public void onCheckboxClick(View view) {
-//        boolean checked = ((CheckBox) view).isChecked();
-//
-//        switch (view.getId()) {
-//
-//            case R.id.chkPresent:
-//                int id = view.getId();
-//                if (checked) {
-//                    dbAdapter.modifierPresence(true, id);
-//                } else {
-//                    dbAdapter.modifierPresence(false,id);
-//                }
-//                break;
-//
-//            default:
-//                throw new IllegalStateException("Unexpected value: " + view.getId());
-//        }
-//    }
+
 
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {

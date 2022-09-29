@@ -143,6 +143,5 @@ public class AjouterActivity extends AppCompatActivity {
         enfant.setPresent(false);
         //ajouter enfant dans la bd
         dbAdapter.ajouterEnfant(enfant);
-        Toast.makeText(AjouterActivity.this, "ajouter", Toast.LENGTH_LONG).show();
     }
 }
