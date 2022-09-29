@@ -57,4 +57,24 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    public void onClickGestLocaux(View view) {
+        Toast.makeText(this, R.string.roomManagement_Construction,
+                Toast.LENGTH_LONG).show();
+    }
+
+    public void onClickGestPresence(View view) {
+        Toast.makeText(this, R.string.presenceManagement_Construction,
+                Toast.LENGTH_LONG).show();
+    }
+
+    public void onClickGestHoraire(View view) {
+        Toast.makeText(this, R.string.schedulePlanning_Construction,
+                Toast.LENGTH_LONG).show();
+    }
+
+    public void OnClickRegEnfant(View view) {
+        monIntent = new Intent(this, RegistreActivity.class);
+        startActivity(monIntent);
+    }
 }

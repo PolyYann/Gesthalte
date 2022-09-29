@@ -27,6 +27,7 @@
     <string name="presenceManagement">Gestions des présences</string>
     <string name="scheduleManagement">Gestions des horaires</string>
     <string name="btnEnregistrer">Enregistrer</string>
+    <string name="presence">Present</string>
     <string name="modifier">Modifier</string>
     <string name="add">Ajouter</string>
     <string name="childRegister">Registre des enfants</string>

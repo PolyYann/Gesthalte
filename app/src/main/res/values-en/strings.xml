@@ -28,4 +28,7 @@
     <string name="scheduleManagement">Schedule management</string>
     <string name="btnEnregistrer">Save</string>
     <string name="presence">Present</string>
+    <string name="modifier">Modify</string>
+    <string name="add">Add</string>
+    <string name="childRegister">Child register</string>
 </resources>
