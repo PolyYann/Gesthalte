@@ -17,20 +17,18 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import model.DBAdapter;
 import model.Enfant;
 
 public class AjouterActivity extends AppCompatActivity {
 
     private Intent monIntent;
     private SimpleAdapter simpleAdapter;
-    private DBAdapter dbAdapter;
     private ListView listViewAjouter;
     private Button btnAjouter;
     private ArrayList<HashMap<String, String> >listeChampsAjouter = new ArrayList<>(); ;
 
     private String[] label;
-    private String[] plainTexts ={"Cailloux", "Agathe", "2020-02-20", "19", "(123)456-7890", "12 carrieres", "St-Granite",  "Quebec","J1P 2P2", "roche", "Fred Cailloux", "Délima Cailloux", "aucun", "Arthur LaRoche"};
+    private String[] plainTexts ={"Cailloux", "A", "2020-02-20", "19", "(123)456-7890", "12 carrieres", "St-Granite",  "Quebec","J1P 2P2", "roche", "Fred Cailloux", "Délima Cailloux", "aucun", "Arthur LaRoche"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,7 +40,7 @@ public class AjouterActivity extends AppCompatActivity {
                 getString(R.string.address), getString(R.string.city), getString(R.string.province),
                 getString(R.string.zipCode), getString(R.string.allergy), getString(R.string.parent1),
                 getString(R.string.parent2), getString(R.string.parent3), getString(R.string.authorizedPersons)};
-        dbAdapter = new DBAdapter(this);
+
         setWidgets();
         setListeners();
     }
@@ -51,6 +49,7 @@ public class AjouterActivity extends AppCompatActivity {
         listViewAjouter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                 Toast.makeText(AjouterActivity.this, label[i], Toast.LENGTH_LONG).show();
             }
         });
@@ -125,6 +124,7 @@ public class AjouterActivity extends AppCompatActivity {
 
     public void onAjouter(View view) {
         //creer enfant
+        EnfantDBHelper enfantDBHelper = new EnfantDBHelper(this);
         Enfant enfant = new Enfant();
         enfant.setNom(plainTexts[0]);
         enfant.setPrenom(plainTexts[1]);
@@ -142,6 +142,6 @@ public class AjouterActivity extends AppCompatActivity {
         enfant.setPersAutorisees(plainTexts[13]);
         enfant.setPresent(false);
         //ajouter enfant dans la bd
-        dbAdapter.ajouterEnfant(enfant);
+        enfantDBHelper.addEnfant(enfant);
     }
 }

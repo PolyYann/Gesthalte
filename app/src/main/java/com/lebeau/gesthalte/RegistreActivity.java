@@ -1,7 +1,10 @@
 package com.lebeau.gesthalte;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,77 +23,31 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.CustomListAdapter;
-import model.DBAdapter;
 import model.Enfant;
-import model.RegistreEnfants;
+
 
 public class RegistreActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
     private Intent monIntent;
-    private ListView listViewRegistre;
-    private CustomListAdapter adapter;
-    private List<Integer> idEnfants = new ArrayList<>();
-    ;
-    private List<String> nomComplets = new ArrayList<>();
-    private DBAdapter dbAdapter;
-    private RegistreEnfants registreEnfants;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registre);
-        registreEnfants = RegistreEnfants.getInstance();
-        getNomComplets();
-        getIdEnfants();
-        listViewRegistre = findViewById(R.id.listViewRegistre);
-        listViewRegistre.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE_MODAL);
-        listViewRegistre.setMultiChoiceModeListener(modeListener);
-        adapter = new CustomListAdapter(nomComplets, idEnfants, this);
-        listViewRegistre.setAdapter(adapter);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+
+        EnfantDBHelper databaseHelperClass = new EnfantDBHelper(this);
+        List<Enfant> enfantModelClasses = databaseHelperClass.getAllEnfants();
+
+        if(enfantModelClasses.size() > 0){
+            EnfantAdapter enfantAdapter = new EnfantAdapter(enfantModelClasses,RegistreActivity.this);
+            recyclerView.setAdapter(enfantAdapter);
+        }else{
+            Toast.makeText(this, "Il n'y a pas d'enfant dans la base de données", Toast.LENGTH_SHORT).show();
+        }
 
     }
-
-    AbsListView.MultiChoiceModeListener modeListener = new AbsListView.MultiChoiceModeListener() {
-        @Override
-        public void onItemCheckedStateChanged(ActionMode actionMode, int i, long l, boolean b) {
-
-        }
-
-        @Override
-        public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-
-            return false;
-        }
-
-        @Override
-        public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-            return false;
-        }
-
-        @Override
-        public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-            return false;
-        }
-
-        @Override
-        public void onDestroyActionMode(ActionMode actionMode) {
-
-        }
-    };
-
-    private void getIdEnfants() {
-        for (Enfant enfant : registreEnfants.getEnfants()) {
-            idEnfants.add(enfant.get_id());
-        }
-    }
-
-    private void getNomComplets() {
-        for (Enfant enfant : registreEnfants.getEnfants()) {
-
-            nomComplets.add(enfant.getPrenom() + " " + enfant.getNom());
-        }
-    }
-
 
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
