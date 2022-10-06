@@ -30,34 +30,46 @@ public class EnfantAdapter extends RecyclerView.Adapter<EnfantAdapter.ViewHolder
     @Override
     public EnfantAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.enfant_list,parent,false);
+        View view = layoutInflater.inflate(R.layout.enfant_list, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder,final int position) {
-    final Enfant enfant = enfants.get(position);
-    holder.lblEnfantNom.setText(new StringBuilder().append(enfant.getPrenom()).append(" ").append(enfant.getNom()).toString());
-    }
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+        final Enfant enfant = enfants.get(position);
+        holder.lblEnfantNom.setText(new StringBuilder().append(enfant.getPrenom()).append(" ").append(enfant.getNom()).toString());
+        holder.checkBox.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (holder.checkBox.isChecked()) {
+                    enfant.setPresent(true);
+                    enfantDBHelper.updateEnfant(enfant);
+                }else{
+                    enfant.setPresent(false);
+                    enfantDBHelper.updateEnfant(enfant);
+                }
+            }
+            });
+        }
 
-    @Override
-    public int getItemCount() {
-        Toast.makeText(context, "Nombre d'enfants : " + enfants.size(), Toast.LENGTH_SHORT).show();
-        return enfants.size();
-    }
+        @Override
+        public int getItemCount () {
+            Toast.makeText(context, "Nombre d'enfants : " + enfants.size(), Toast.LENGTH_SHORT).show();
+            return enfants.size();
+        }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView lblEnfantNom;
-        TextView textViewId;
-        CheckBox checkBox;
+        public class ViewHolder extends RecyclerView.ViewHolder {
+            TextView lblEnfantNom;
+            TextView textViewId;
+            CheckBox checkBox;
 
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            textViewId = itemView.findViewById(R.id.textViewId);
-            lblEnfantNom = itemView.findViewById(R.id.lblEnfantNom);
-               checkBox = itemView.findViewById(R.id.chkPresent);
+            public ViewHolder(@NonNull View itemView) {
+                super(itemView);
+                textViewId = itemView.findViewById(R.id.textViewId);
+                lblEnfantNom = itemView.findViewById(R.id.lblEnfantNom);
+                checkBox = itemView.findViewById(R.id.chkPresent);
 
+            }
         }
     }
-}

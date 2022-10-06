@@ -88,4 +88,6 @@ public class RegistreActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }

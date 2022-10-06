@@ -121,4 +121,30 @@ public class EnfantDBHelper extends SQLiteOpenHelper {
     }
 
 
+    public void updateEnfant(Enfant enfant) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(EnfantDBHelper.COL_NOM, enfant.getNom());
+        contentValues.put(EnfantDBHelper.COL_PRENOM, enfant.getPrenom());
+        contentValues.put(EnfantDBHelper.COL_DATE_NAISSANCE, enfant.getDateNaissance());
+        contentValues.put(EnfantDBHelper.COL_AGE, enfant.getAge());
+        contentValues.put(EnfantDBHelper.COL_TELEPHONE, enfant.getTelephone());
+        contentValues.put(EnfantDBHelper.COL_ADRESSE, enfant.getAdresse());
+        contentValues.put(EnfantDBHelper.COL_VILLE, enfant.getVille());
+        contentValues.put(EnfantDBHelper.COL_PROVINCE, enfant.getProvince());
+        contentValues.put(EnfantDBHelper.COL_CODE_POSTAL, enfant.getCodePostal());
+        contentValues.put(EnfantDBHelper.COL_ALLERGIES, enfant.getAllergies());
+        contentValues.put(EnfantDBHelper.COL_PARENT1, enfant.getParent1());
+        contentValues.put(EnfantDBHelper.COL_PARENT2, enfant.getParent2());
+        contentValues.put(EnfantDBHelper.COL_PARENT3, enfant.getParent3());
+        contentValues.put(EnfantDBHelper.COL_PERS_AUTORISEES, enfant.getPersAutorisees());
+        contentValues.put(EnfantDBHelper.COL_EST_PRESENT, enfant.isPresent());
+        sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.update(EnfantDBHelper.TABLE_E, contentValues, EnfantDBHelper.COL_ID + " = ?",
+                new String[]{String.valueOf(enfant.get_id())});
+    }
+    public void deleteEnfant(int id){
+        sqLiteDatabase = this.getWritableDatabase();
+        sqLiteDatabase.delete(EnfantDBHelper.TABLE_E, EnfantDBHelper.COL_ID + " = ?",
+                new String[]{String.valueOf(id)});
+    }
 }
