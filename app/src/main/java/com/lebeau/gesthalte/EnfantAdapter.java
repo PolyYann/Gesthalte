@@ -39,6 +39,11 @@ public class EnfantAdapter extends RecyclerView.Adapter<EnfantAdapter.ViewHolder
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         final Enfant enfant = enfants.get(position);
         holder.lblEnfantNom.setText(new StringBuilder().append(enfant.getPrenom()).append(" ").append(enfant.getNom()).toString());
+        if(enfant.isPresent()){
+            holder.checkBox.setChecked(true);
+        }else{
+            holder.checkBox.setChecked(false);
+        }
         holder.checkBox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
