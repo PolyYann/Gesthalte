@@ -1,6 +1,8 @@
 package model;
 
-public class Enfant {
+import java.io.Serializable;
+
+public class Enfant implements Serializable {
     private int _id;
     private String nom;
     private String prenom;

@@ -37,11 +37,11 @@ public class RegistreActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        EnfantDBHelper databaseHelperClass = new EnfantDBHelper(this);
-        List<Enfant> enfantModelClasses = databaseHelperClass.getAllEnfants();
+        EnfantDBHelper dbHelper = new EnfantDBHelper(this);
+        List<Enfant> enfants = dbHelper.getAllEnfants();
 
-        if(enfantModelClasses.size() > 0){
-            EnfantAdapter enfantAdapter = new EnfantAdapter(enfantModelClasses,RegistreActivity.this);
+        if(enfants.size() > 0){
+            EnfantAdapter enfantAdapter = new EnfantAdapter(enfants,RegistreActivity.this);
             recyclerView.setAdapter(enfantAdapter);
         }else{
             Toast.makeText(this, "Il n'y a pas d'enfant dans la base de données", Toast.LENGTH_SHORT).show();

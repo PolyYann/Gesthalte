@@ -1,9 +1,10 @@
 package com.lebeau.gesthalte;
-
-import android.content.Context;
+import androidx.appcompat.app.AppCompatActivity;import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -56,24 +57,33 @@ public class EnfantAdapter extends RecyclerView.Adapter<EnfantAdapter.ViewHolder
                 }
             }
             });
+        holder.btnModifier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent modifierIntent = new Intent(view.getContext(), ModifierActivity.class);
+                modifierIntent.putExtra("enfant",enfant);
+                view.getContext().startActivity(modifierIntent);
+            }
+        });
         }
 
         @Override
         public int getItemCount () {
-            Toast.makeText(context, "Nombre d'enfants : " + enfants.size(), Toast.LENGTH_SHORT).show();
-            return enfants.size();
+             return enfants.size();
         }
 
         public class ViewHolder extends RecyclerView.ViewHolder {
             TextView lblEnfantNom;
             TextView textViewId;
             CheckBox checkBox;
+            Button btnModifier;
 
             public ViewHolder(@NonNull View itemView) {
                 super(itemView);
                 textViewId = itemView.findViewById(R.id.textViewId);
                 lblEnfantNom = itemView.findViewById(R.id.lblEnfantNom);
                 checkBox = itemView.findViewById(R.id.chkPresent);
+                btnModifier = itemView.findViewById(R.id.btnModifier);
 
             }
         }

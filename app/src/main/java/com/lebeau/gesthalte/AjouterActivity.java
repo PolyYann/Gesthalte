@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
@@ -23,12 +24,13 @@ public class AjouterActivity extends AppCompatActivity {
 
     private Intent monIntent;
     private SimpleAdapter simpleAdapter;
+    private EditText txtLigneItem;
     private ListView listViewAjouter;
     private Button btnAjouter;
     private ArrayList<HashMap<String, String> >listeChampsAjouter = new ArrayList<>(); ;
 
     private String[] label;
-    private String[] plainTexts ={"Cailloux", "A", "2020-02-20", "19", "(123)456-7890", "12 carrieres", "St-Granite",  "Quebec","J1P 2P2", "roche", "Fred Cailloux", "Délima Cailloux", "aucun", "Arthur LaRoche"};
+    private String[] plainTexts ={"","","","","","","","","","","","","",""};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class AjouterActivity extends AppCompatActivity {
         //écouter ce qui va se passer dans le id listingView
         btnAjouter = findViewById(R.id.btnAjouter);
         listViewAjouter = findViewById(R.id.listViewAjouter);
+
         String[] from = {"label", "plainText"};
         int[] to = {R.id.lblLigneItem, R.id.txtLigneItem} ;
         //construire la liste
@@ -126,20 +129,22 @@ public class AjouterActivity extends AppCompatActivity {
         //creer enfant
         EnfantDBHelper enfantDBHelper = new EnfantDBHelper(this);
         Enfant enfant = new Enfant();
-        enfant.setNom(plainTexts[0]);
-        enfant.setPrenom(plainTexts[1]);
-        enfant.setDateNaissance(plainTexts[2]);
-        enfant.setAge(Integer.parseInt(plainTexts[3]));
-        enfant.setTelephone(plainTexts[4]);
-        enfant.setAdresse(plainTexts[5]);
-        enfant.setVille(plainTexts[6]);
-        enfant.setProvince(plainTexts[7]);
-        enfant.setCodePostal(plainTexts[8]);
-        enfant.setAllergies(plainTexts[9]);
-        enfant.setParent1(plainTexts[10]);
-        enfant.setParent2(plainTexts[11]);
-        enfant.setParent3(plainTexts[12]);
-        enfant.setPersAutorisees(plainTexts[13]);
+        enfant.setNom(listeChampsAjouter.get(0).get("plainText"));
+        Toast.makeText(AjouterActivity.this, listeChampsAjouter.get(0).get("plainText"),
+                Toast.LENGTH_LONG).show();
+        enfant.setPrenom(listeChampsAjouter.get(1).get("plainText"));
+        enfant.setDateNaissance(listeChampsAjouter.get(2).get("plainText"));
+        enfant.setAge(Integer.parseInt(listeChampsAjouter.get(3).get("plainText")));
+        enfant.setTelephone(listeChampsAjouter.get(4).get("plainText"));
+        enfant.setAdresse(listeChampsAjouter.get(5).get("plainText"));
+        enfant.setVille(listeChampsAjouter.get(6).get("plainText"));
+        enfant.setProvince(listeChampsAjouter.get(7).get("plainText"));
+        enfant.setCodePostal(listeChampsAjouter.get(8).get("plainText"));
+        enfant.setAllergies(listeChampsAjouter.get(9).get("plainText"));
+        enfant.setParent1(listeChampsAjouter.get(10).get("plainText"));
+        enfant.setParent2(listeChampsAjouter.get(11).get("plainText"));
+        enfant.setParent3(listeChampsAjouter.get(12).get("plainText"));
+        enfant.setPersAutorisees(listeChampsAjouter.get(13).get("plainText"));
         enfant.setPresent(false);
         //ajouter enfant dans la bd
         enfantDBHelper.addEnfant(enfant);
