@@ -8,19 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.ActionMode;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.CheckBox;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import model.Enfant;
@@ -28,6 +20,7 @@ import model.Enfant;
 
 public class RegistreActivity extends AppCompatActivity {
     RecyclerView recyclerView;
+    RegistreAdapter registreAdapter;
     private Intent monIntent;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,13 +34,15 @@ public class RegistreActivity extends AppCompatActivity {
         List<Enfant> enfants = dbHelper.getAllEnfants();
 
         if(enfants.size() > 0){
-            EnfantAdapter enfantAdapter = new EnfantAdapter(enfants,RegistreActivity.this);
-            recyclerView.setAdapter(enfantAdapter);
+            registreAdapter = new RegistreAdapter(enfants,RegistreActivity.this);
+            recyclerView.setAdapter(registreAdapter);
         }else{
             Toast.makeText(this, "Il n'y a pas d'enfant dans la base de données", Toast.LENGTH_SHORT).show();
         }
 
     }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {

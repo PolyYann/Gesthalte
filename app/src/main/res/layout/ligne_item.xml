@@ -3,14 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="-16dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -26,7 +27,7 @@
                 android:layout_weight="0.5"
                 android:gravity="start"
                 android:text="TextView"
-                android:textSize="12dp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <EditText
@@ -35,9 +36,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:layout_alignParentRight="true"
             android:minHeight="48dp"
-            android:text="Name"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>

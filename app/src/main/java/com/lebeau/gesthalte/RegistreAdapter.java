@@ -1,5 +1,6 @@
 package com.lebeau.gesthalte;
-import androidx.appcompat.app.AppCompatActivity;import android.content.Context;
+
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,12 +16,12 @@ import java.util.List;
 
 import model.Enfant;
 
-public class EnfantAdapter extends RecyclerView.Adapter<EnfantAdapter.ViewHolder> {
+public class RegistreAdapter extends RecyclerView.Adapter<RegistreAdapter.ViewHolder> {
     private List<Enfant> enfants;
     private Context context;
     private EnfantDBHelper enfantDBHelper;
 
-    public EnfantAdapter(List<Enfant> enfants, Context context) {
+    public RegistreAdapter(List<Enfant> enfants, Context context) {
         this.enfants = enfants;
         this.context = context;
         enfantDBHelper = new EnfantDBHelper(context);
@@ -29,7 +29,7 @@ public class EnfantAdapter extends RecyclerView.Adapter<EnfantAdapter.ViewHolder
 
     @NonNull
     @Override
-    public EnfantAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RegistreAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.enfant_list, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
@@ -60,9 +60,9 @@ public class EnfantAdapter extends RecyclerView.Adapter<EnfantAdapter.ViewHolder
         holder.btnModifier.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent modifierIntent = new Intent(view.getContext(), ModifierActivity.class);
-                modifierIntent.putExtra("enfant",enfant);
-                view.getContext().startActivity(modifierIntent);
+                Intent intent = new Intent(context, ModifierActivity.class);
+                intent.putExtra("enfant",enfant);
+                context.startActivity(intent);
             }
         });
         }
